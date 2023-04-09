@@ -1,24 +1,19 @@
 #修改TNAME: 360P2 中的360P2为你需要编译的型号，注意名称要与configs/templates/目录下的名字相同
-name: Build YK-L1 Padavan
+name: ykl1
 
-on:
+on: 
   release:
     types: [published]
-  push:
+  push:                                                        # 推送操作
     tags:
-    - 'v*'
+      - 'v*'
+#    branches:                                                  # 分支
+#      - main                                                   # 主分支
 #  workflow_dispatch:
-#    inputs:
-#      name:
-#        description: "Build Padavan"
-#        required: true
-#        default: "buil"
-  #  branches:
-  #    - master
-  #  schedule:
-  #    - cron: 0 8 * * 5
-   watch:
-     types: [started]
+#  schedule:                                                    # 自动编译时间表
+#    - cron: 5 * * * *  
+  watch:
+    types: [started]
 jobs:
   build:
     runs-on: ubuntu-20.04
