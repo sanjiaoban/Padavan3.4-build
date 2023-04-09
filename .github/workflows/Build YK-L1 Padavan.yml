@@ -2,17 +2,17 @@
 name: Build YK-L1 Padavan
 
 on:
+  release:
+    types: [published]
+  push:
+    tags:
+    - 'v*'
 #  workflow_dispatch:
 #    inputs:
 #      name:
 #        description: "Build Padavan"
 #        required: true
-#        default: "build"
-    release:
-      types: [published]
-  push:
-    tags:
-      - "v*"
+#        default: "buil"
   #  branches:
   #    - master
   #  schedule:
